@@ -10,7 +10,7 @@ public class Reacting {
     protected static String mountMessage(String  action, String dedicate, String authorName, int number ){
 
         StringBuilder builder = new StringBuilder();
-        builder.append("@" + authorName);
+        builder.append(authorName);
         builder.append(" " + action +" ");
         builder.append("@" + dedicate + " ");
         builder.append("#"+number);

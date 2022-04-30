@@ -27,8 +27,14 @@ public class ServicesOnMsg {
     public static int cutINT(String message, int bound){
         int sub=1;
         String builder="";
-        if(message.indexOf("#") == -1)
-            return AleatoryNum.genNumberInt(bound);
+        if(message.indexOf("#") == -1){
+            int aux =  AleatoryNum.genNumberInt(bound);
+            while (aux ==0) {
+                aux =  AleatoryNum.genNumberInt(bound);
+            }
+            return aux;
+        }
+
         else{
            
             String aux;

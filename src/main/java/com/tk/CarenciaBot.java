@@ -25,7 +25,6 @@ public class CarenciaBot extends ListenerAdapter {
 
         String message =msg.getContentRaw();
 
-
         String action = com.tk.Algoritimo.ServicesOnMsg.shorC(message);
 
         if(action.equals("C.") || action.equals("c.")){
@@ -33,11 +32,9 @@ public class CarenciaBot extends ListenerAdapter {
             action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
 
             if(action.equals("kiss")){
-                int number = com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 1);
-                String dedicate = com.tk.Algoritimo.ServicesOnMsg.acariciaoString(message + " ",(3+action.length()) );
-                if(dedicate.equals("#" + Integer.toString(number)))
-                    dedicate = " ";
-                com.tk.Reactions.Kiss.kiss(channel, action, dedicate, number, msg.getAuthor().getAsMention());
+                int number = com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 2);
+                System.out.println(msg.getAuthor().getAsMention());
+                com.tk.Reactions.Kiss.kiss(channel, action,msg.getMentionedUsersBag().toString(), number, msg.getAuthor().getAsMention());
             }
         }
     }
