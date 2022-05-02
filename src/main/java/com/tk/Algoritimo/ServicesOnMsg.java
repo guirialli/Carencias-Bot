@@ -27,11 +27,10 @@ public class ServicesOnMsg {
     public static int cutINT(String message, int bound){
         int sub=1;
         String builder="";
-        if(message.indexOf("#") == -1){
+        if(message.indexOf("#") == -1 ){
             int aux =  AleatoryNum.genNumberInt(bound);
-            while (aux ==0) {
-                aux =  AleatoryNum.genNumberInt(bound);
-            }
+            if (aux ==0)
+                aux = cutINT(message, bound);
             return aux;
         }
 
@@ -46,7 +45,7 @@ public class ServicesOnMsg {
             } while (aux.indexOf("#") == -1);
 
             sub = Integer.parseInt(builder);
-            if(sub>bound)
+            if(sub>bound || sub <=0)
                 sub = AleatoryNum.genNumberInt(bound); 
             return sub;
         }

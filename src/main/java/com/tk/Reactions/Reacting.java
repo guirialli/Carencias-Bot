@@ -24,7 +24,7 @@ public abstract class Reacting {
             StringBuilder builder = new StringBuilder();
             builder.append(caminho + Integer.toString(number) +".gif");
             return new File(builder.toString());   
-        } catch (Exception  e) {
+        } catch (IllegalArgumentException  e) {
             e.printStackTrace();
             System.out.println("File not found or unknown error. check if you have correctly typed imagesSaved equal to the number of gifs inside in folder.");
             return new File("src/main/java/com/tk/Reactions/Error/error.jpg");
