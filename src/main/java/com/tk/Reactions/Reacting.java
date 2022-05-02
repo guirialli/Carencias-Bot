@@ -1,7 +1,6 @@
 package com.tk.Reactions;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 import net.dv8tion.jda.api.entities.MessageChannel;
 
