@@ -31,7 +31,7 @@ public class CarenciaBot extends ListenerAdapter {
             MessageChannel channel = event.getChannel();
             action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
             if(action.equals("kiss")){
-                byte imagesSaved = 30;
+                byte imagesSaved = 30; //this number is equals .gif inside in Kiss folder.
                 com.tk.Reactions.Kissus.kiss(channel,
                    com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                    com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
