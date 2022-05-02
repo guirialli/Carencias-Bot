@@ -52,18 +52,13 @@ public class ServicesOnMsg {
         }
     }
 
-    public static String acariciaoString(String message,int indiceSub){
-        String aux = null;
-        int indice = indiceSub;
-        StringBuilder builder = new StringBuilder();
-        do {
-            aux = message.substring(indice, indice+1);
-            if(!aux.equals(" "))
-                builder.append(aux);
-            indice++;
-        } while (!aux.equals(" "));
-
-        return builder.toString();
+    public static String acariciaoString(String message){
+        if(message.equals("[]"))
+            return "";
+        else            
+            return message.substring(message.length()-20, message.length() -2);
+        
+        
     }
 
 }

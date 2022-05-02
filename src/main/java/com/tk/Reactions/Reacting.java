@@ -5,15 +5,17 @@ import java.io.File;
 import net.dv8tion.jda.api.entities.MessageChannel;
 
 
-public class Reacting {
+public abstract class Reacting {
+
     
     protected static String mountMessage(String  action, String dedicate, String authorName, int number ){
 
         StringBuilder builder = new StringBuilder();
         builder.append(authorName);
-        builder.append(" " + action +" ");
-        builder.append("@" + dedicate + " ");
-        builder.append("#"+number);
+        builder.append(" **" + action +"** ");
+        if(!dedicate.isEmpty())
+        builder.append("<@" + dedicate + "> ");
+        builder.append("**#"+number + "**");
         return builder.toString();
     }
 
@@ -24,6 +26,6 @@ public class Reacting {
     }
 
     protected static void sendMessage(String mountMessageString, File animateFile, MessageChannel channel){
-        channel.sendMessage(mountMessageString).addFile(animateFile, "image.gif").queue();;
+        channel.sendMessage(mountMessageString).addFile(animateFile, "image.gif").queue();
     } 
 }

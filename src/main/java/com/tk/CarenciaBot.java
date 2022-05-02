@@ -30,11 +30,12 @@ public class CarenciaBot extends ListenerAdapter {
         if(action.equals("C.") || action.equals("c.")){
             MessageChannel channel = event.getChannel();
             action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
-
             if(action.equals("kiss")){
-                int number = com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 2);
-                System.out.println(msg.getAuthor().getAsMention());
-                com.tk.Reactions.Kiss.kiss(channel, action,msg.getMentionedUsersBag().toString(), number, msg.getAuthor().getAsMention());
+                byte imagesSaved = 30;
+                com.tk.Reactions.Kiss.kiss(channel,
+                   com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                   com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                   1+imagesSaved), msg.getAuthor().getAsMention());
             }
         }
     }
