@@ -25,8 +25,7 @@ public class ServicesOnMsg {
 
 
     public static int cutINT(String message, int bound){
-        int sub=1;
-        String builder="";
+
         if(message.indexOf("#") == -1 ){
             int aux =  AleatoryNum.genNumberInt(bound);
             if (aux ==0)
@@ -35,8 +34,8 @@ public class ServicesOnMsg {
         }
 
         else{
-           
-            String aux;
+            int sub=1;
+            String aux, builder="";
             do {
                 aux = message.substring(message.length()-sub);
                 if(aux.indexOf("#") == -1)
