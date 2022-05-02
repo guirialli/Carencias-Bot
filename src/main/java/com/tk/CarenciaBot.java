@@ -16,7 +16,7 @@ public class CarenciaBot extends ListenerAdapter {
 
 
     public static void main(String[] args) throws LoginException {
-        JDABuilder.create("OTcwMDI3Njk0MzY2NTIzNDQz.Ym1-sA.cwSBc81E4s2dxbKAdtcGhPeUHuQ", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
+        JDABuilder.create("OTcwMDI3Njk0MzY2NTIzNDQz.Ym1-sA.b4jSHPHkTNxybp_BhhThZfIPGOo", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
         .addEventListeners(new CarenciaBot()).setActivity(Activity.playing("loving ♥!")).build();
     }
     
@@ -32,7 +32,7 @@ public class CarenciaBot extends ListenerAdapter {
             action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
             if(action.equals("kiss")){
                 byte imagesSaved = 30;
-                com.tk.Reactions.Kiss.kiss(channel,
+                com.tk.Reactions.Kissus.kiss(channel,
                    com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                    com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
                    1+imagesSaved), msg.getAuthor().getAsMention());
