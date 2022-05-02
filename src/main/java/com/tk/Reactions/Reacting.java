@@ -1,6 +1,7 @@
 package com.tk.Reactions;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import net.dv8tion.jda.api.entities.MessageChannel;
 
@@ -20,9 +21,16 @@ public abstract class Reacting {
     }
 
     protected static File animateFile(int number, String caminho){
-        StringBuilder builder = new StringBuilder();
-        builder.append(caminho + Integer.toString(number) +".gif");
-        return new File(builder.toString());        
+        try {
+            StringBuilder builder = new StringBuilder();
+            builder.append(caminho + Integer.toString(number) +".gif");
+            return new File(builder.toString());   
+        } catch (Exception  e) {
+            e.printStackTrace();
+            System.out.println("File not found or unknown error. check if you have correctly typed imagesSaved equal to the number of gifs inside in folder.");
+            return new File("src/main/java/com/tk/Reactions/Error/error.jpg");
+        }
+     
     }
 
     protected static void sendMessage(String mountMessageString, File animateFile, MessageChannel channel){
