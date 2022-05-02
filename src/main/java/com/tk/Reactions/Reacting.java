@@ -19,17 +19,10 @@ public abstract class Reacting {
         return builder.toString();
     }
 
-    protected static File animateFile(int number, String caminho){
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(caminho + Integer.toString(number) +".gif");
-            return new File(builder.toString());   
-        } catch (IllegalArgumentException  e) {
-            e.printStackTrace();
-            System.out.println("File not found or unknown error. check if you have correctly typed imagesSaved equal to the number of gifs inside in folder.");
-            return new File("src/main/java/com/tk/Reactions/Error/error.jpg");
-        }
-     
+    protected static File animateFile(int number, String caminho) throws IllegalArgumentException{
+        StringBuilder builder = new StringBuilder();
+        builder.append(caminho + Integer.toString(number) +".gif");
+        return new File(builder.toString());    
     }
 
     protected static void sendMessage(String mountMessageString, File animateFile, MessageChannel channel){
