@@ -35,7 +35,14 @@ public class CarenciaBot extends ListenerAdapter {
                 com.tk.Reactions.Kissus.kiss(channel,
                    com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                    com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
-                   1+imagesSaved), msg.getAuthor().getAsMention());
+                   imagesSaved), msg.getAuthor().getAsMention());
+            }
+            else if(action.equals("hug")){
+                byte imagesSaved =1;
+                com.tk.Reactions.Hug.huged(channel,
+                   com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                   com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                   imagesSaved), msg.getAuthor().getAsMention());
             }
         }
     }
