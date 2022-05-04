@@ -29,14 +29,13 @@ public class CarenciaBot extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         Message  msg = event.getMessage();
 
-        String message =msg.getContentRaw();
+        try {
+            String message =msg.getContentRaw();
+            String action = com.tk.Algoritimo.ServicesOnMsg.shorC(message);
 
-        String action = com.tk.Algoritimo.ServicesOnMsg.shorC(message);
-
-        if(action.equals("C.") || action.equals("c.")){
-            MessageChannel channel = event.getChannel();
-            action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
-            try {
+            if(action.equals("C.") || action.equals("c.")){
+                MessageChannel channel = event.getChannel();
+                action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
                 if(action.equals("kiss")){
                     byte imagesSaved = 30; //this number is equals the .gif inside in Kiss folder.
                     com.tk.Reactions.Kissus.kiss(channel,
@@ -51,9 +50,12 @@ public class CarenciaBot extends ListenerAdapter {
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }   
-            }catch(IllegalArgumentException e){
-                System.out.println("IllegalArgumentException, verify if imageSaved equals quantity than files saved in your respective folder.");
+
             }
+        } catch (IllegalArgumentException e) {
+            System.out.println("IllegalArgumentException, verify if imageSaved equals quantity than files saved in your respective folder.");} catch( Exception e){   
         }
+        
+        
     }
 }
