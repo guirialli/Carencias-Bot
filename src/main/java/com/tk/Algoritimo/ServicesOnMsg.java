@@ -6,7 +6,7 @@ public class ServicesOnMsg {
         return message.substring(0, 2);
     }
 
-    
+
     public static String cutAction(String message){
         String aux=null;
         int indice=2;
@@ -44,9 +44,7 @@ public class ServicesOnMsg {
         if(message.equals("[]"))
             return "";
         else            
-            return message.substring(message.length()-20, message.length() -2);
-        
-        
+            return message.substring(message.length()-20, message.length() -2);        
     }
 
 }
