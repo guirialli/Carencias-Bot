@@ -29,11 +29,11 @@ public abstract class Reacting {
     }
 
     protected static void sendMessage(String mountMessageString, File animateFile, MessageChannel channel, String afection) {
-        EmbedBuilder eb = new EmbedBuilder();
-
+        EmbedBuilder eb = new EmbedBuilder();  
         eb.setTitle("❤"+afection+"!❤");
-        eb.setColor(new Color(330202));
+        eb.setColor(new Color(075010130));
         eb.setDescription(mountMessageString);
+        eb.setImage("attachment://Image.gif");
         channel.sendFile(animateFile, "Image.gif").setEmbeds(eb.build()).queue();
     }
 }
