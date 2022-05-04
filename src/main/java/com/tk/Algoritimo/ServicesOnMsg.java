@@ -5,6 +5,8 @@ public class ServicesOnMsg {
     public static String shorC(String message){
         return message.substring(0, 2);
     }
+
+    
     public static String cutAction(String message){
         String aux=null;
         int indice=2;
@@ -25,8 +27,6 @@ public class ServicesOnMsg {
 
 
     public static int cutINT(String message, int bound){
-       
-
         if(message.indexOf("#") == -1 ){
             return AleatoryNum.genNumberInt(bound);
         }
