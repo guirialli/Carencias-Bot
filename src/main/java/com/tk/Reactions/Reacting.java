@@ -28,12 +28,12 @@ public abstract class Reacting {
         return new File(builder.toString());    
     }
 
-    protected static void sendMessage(String mountMessageString, File animateFile, MessageChannel channel) {
+    protected static void sendMessage(String mountMessageString, File animateFile, MessageChannel channel, String afection) {
         EmbedBuilder eb = new EmbedBuilder();
 
-        eb.setTitle("❤Afection!❤");
+        eb.setTitle("❤"+afection+"!❤");
         eb.setColor(new Color(330202));
         eb.setDescription(mountMessageString);
-        channel.sendFile(animateFile).setEmbeds(eb.build()).queue();
+        channel.sendFile(animateFile, "Image.gif").setEmbeds(eb.build()).queue();
     }
 }

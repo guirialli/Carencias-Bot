@@ -1,5 +1,6 @@
 package com.tk.Algoritimo;
 
+
 public class ServicesOnMsg {
     
     public static String shorC(String message){

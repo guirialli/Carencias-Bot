@@ -1,6 +1,8 @@
 package com.tk;
 
 import javax.security.auth.login.LoginException;
+
+
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Message;
@@ -40,7 +42,7 @@ public class CarenciaBot extends ListenerAdapter {
                     byte imagesSaved = 30; //this number is equals the .gif inside in Kiss folder.
                     com.tk.Reactions.Kissus.kiss(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
-                        com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                        com.tk.Algoritimo.ServicesOnMsg.cutINT(message , 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("hug")){
@@ -53,7 +55,7 @@ public class CarenciaBot extends ListenerAdapter {
 
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("IllegalArgumentException, verify if imageSaved equals quantity than files saved in your respective folder.");} catch( Exception e){   
+            System.out.println("IllegalArgumentException, verify if imageSaved equals quantity than files saved in your respective folder.");} catch( Exception e){
         }
         
         
