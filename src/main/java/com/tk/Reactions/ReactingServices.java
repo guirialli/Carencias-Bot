@@ -8,7 +8,7 @@ import java.awt.Color;
 
 
 
-public abstract class Reacting {
+public abstract class ReactingServices{
 
     
     protected static String mountMessage(String  action, String dedicate, String authorName, int number ){
