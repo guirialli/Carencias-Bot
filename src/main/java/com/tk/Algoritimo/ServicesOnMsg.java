@@ -28,13 +28,14 @@ public class ServicesOnMsg {
 
 
     public static int cutINT(String message, int bound){
-        if(message.indexOf("#") == -1 ){
+        String[] msgVet= message.split(" ");
+        if(msgVet[msgVet.length-1].indexOf("#") == -1  || msgVet[msgVet.length-1].indexOf("[") != -1){
             return AleatoryNum.genNumberInt(bound);
         }
 
         else{
             int aux;
-            aux = Integer.parseInt(message.substring(message.lastIndexOf("#")+1, message.length()));
+            aux = Integer.parseInt(msgVet[msgVet.length-1].substring(msgVet[msgVet.length-1].lastIndexOf("#")+1, msgVet[msgVet.length-1].length()));
             if(aux>bound || aux <=0)
                 aux = AleatoryNum.genNumberInt(bound); 
             return aux;

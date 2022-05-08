@@ -14,4 +14,7 @@ public class Kissus {
             com.tk.Reactions.ReactingServices.animateFile(number, path), channel, afection);
     }
 
+    @Override
+    public static void action(){}
+
 }

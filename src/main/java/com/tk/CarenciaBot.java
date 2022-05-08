@@ -32,27 +32,54 @@ public class CarenciaBot extends ListenerAdapter {
         Message  msg = event.getMessage();
 
         try {
-            String message =msg.getContentRaw();
+            String message =msg.getContentRaw().toLowerCase();
             String action = com.tk.Algoritimo.ServicesOnMsg.shorC(message);
 
-            if(action.equals("C.") || action.equals("c.")){
+            if(action.equals("c.")){
                 MessageChannel channel = event.getChannel();
                 action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
                 if(action.equals("kiss")){
-                    byte imagesSaved = 30; //this number is equals the .gif inside in Kiss folder.
+                    byte imagesSaved = 60; //this number is equals the .gif inside in Kiss folder.
                     com.tk.Reactions.Kissus.kiss(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message , 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("hug")){
-                    byte imagesSaved =2;
+                    byte imagesSaved =60;
                     com.tk.Reactions.Hug.huged(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
                         imagesSaved), msg.getAuthor().getAsMention());
-                }   
-
+                }
+                else if(action.equals("lick")){
+                    byte imagesSaved = 60;
+                    com.tk.Reactions.Lick.licked(channel,
+                        com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                        com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                        imagesSaved), msg.getAuthor().getAsMention());
+                }
+                else if(action.equals("spank")){
+                    byte imagesSaved = 60;
+                    com.tk.Reactions.Spank.spanked(channel,
+                        com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                        com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                        imagesSaved), msg.getAuthor().getAsMention());
+                }
+                else if (action.equals("slap")){
+                    byte imagesSaved = 60;
+                    com.tk.Reactions.Slap.slaped(channel,
+                    com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                    com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                    imagesSaved), msg.getAuthor().getAsMention());
+                }
+                else if (action.equals("pat")){
+                    byte imagesSaved = 60;
+                    com.tk.Reactions.Pat.pated(channel,
+                        com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                        com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                        imagesSaved), msg.getAuthor().getAsMention());
+                }
             }
         } catch (IllegalArgumentException e) {
             System.out.println("IllegalArgumentException, verify if imageSaved equals quantity than files saved in your respective folder.");} catch( Exception e){
