@@ -20,7 +20,7 @@ public class CarenciaBot extends ListenerAdapter {
     public static void main(String[] args)  {
 
         try {
-            JDABuilder.create("OTcwMDI3Njk0MzY2NTIzNDQz.Ym1-sA.b4jSHPHkTNxybp_BhhThZfIPGOo", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
+            JDABuilder.create("TOKEN", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
             .addEventListeners(new CarenciaBot()).setActivity(Activity.playing("loving ♥!")).build();
         } catch (LoginException e) {
             System.out.println("Please, verify the token inserted.");
