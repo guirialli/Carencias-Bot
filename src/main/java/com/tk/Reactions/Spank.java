@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 public class Spank extends ReactingServices{
 
     public static void spanked(MessageChannel channel, String dedicate, int number, String authorName){
-        String path = "src/main/java/com/tk/Reactions/Animations/Spank/";
+        String path = "src/main/java/com/tk/Animations/Spank/";
         String afection = "Spank, Spank";
 
         com.tk.Reactions.ReactingServices.sendMessage(

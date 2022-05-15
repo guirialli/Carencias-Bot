@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 
 public class Kissus extends ReactingServices{
     public static void kiss( MessageChannel channel, String dedicate, int number, String authorName ) throws IllegalArgumentException{
-        String path = "src/main/java/com/tk/Reactions/Animations/Kiss/";
+        String path = "src/main/java/com/tk/Animations/Kiss/";
         String afection = "Kissus";
 
         com.tk.Reactions.ReactingServices.sendMessage(

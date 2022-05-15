@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 public class Hug extends ReactingServices {
 
     public static void huged( MessageChannel channel, String dedicate, int number, String authorName ) throws IllegalArgumentException{
-        String path="src/main/java/com/tk/Reactions/Animations/Hug/";
+        String path="src/main/java/com/tk/Animations/Hug/";
         String afection="Hug";
         com.tk.Reactions.ReactingServices.sendMessage(
             com.tk.Reactions.ReactingServices.mountMessage("Huged", 

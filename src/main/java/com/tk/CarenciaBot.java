@@ -1,5 +1,8 @@
 package com.tk;
 
+import java.io.File;
+import java.util.Arrays;
+
 import javax.security.auth.login.LoginException;
 
 
@@ -20,7 +23,7 @@ public class CarenciaBot extends ListenerAdapter {
     public static void main(String[] args)  {
 
         try {
-            JDABuilder.create("TOKEN", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
+            JDABuilder.create("OTcwMDI3Njk0MzY2NTIzNDQz.G_0sR4.uRqmz2LUiluUAb_N1kHgeszZv6HQHSOXeo4S_s", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
             .addEventListeners(new CarenciaBot()).setActivity(Activity.playing("loving ♥!")).build();
         } catch (LoginException e) {
             System.out.println("Please, verify the token inserted.");
@@ -37,44 +40,59 @@ public class CarenciaBot extends ListenerAdapter {
 
             if(action.equals("c.")){
                 MessageChannel channel = event.getChannel();
+                File file;
                 action = com.tk.Algoritimo.ServicesOnMsg.cutAction(message + " ");
+
+
                 if(action.equals("kiss")){
-                    byte imagesSaved = 60; //this number is equals the .gif inside in Kiss folder.
+                    file = new File("src/main/java/com/tk/Reactions/Animations/Kiss");
+                    int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved--;
                     com.tk.Reactions.Kissus.kiss(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message , 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("hug")){
-                    byte imagesSaved =60;
+                    file = new File("src/main/java/com/tk/Reactions/Animations/Hug");
+                    int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved--;
                     com.tk.Reactions.Hug.huged(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("lick")){
-                    byte imagesSaved = 60;
+                    file = new File("src/main/java/com/tk/Reactions/Animations/Lick");
+                    int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved--;
                     com.tk.Reactions.Lick.licked(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("spank")){
-                    byte imagesSaved = 60;
+                    file = new File("src/main/java/com/tk/Reactions/Animations/Spank");
+                    int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved--;                    
                     com.tk.Reactions.Spank.spanked(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if (action.equals("slap")){
-                    byte imagesSaved = 60;
+                    file = new File("src/main/java/com/tk/Reactions/Animations/Slap");
+                    int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved--;                    
                     com.tk.Reactions.Slap.slaped(channel,
-                    com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
-                    com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
-                    imagesSaved), msg.getAuthor().getAsMention());
+                        com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                        com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                        imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if (action.equals("pat")){
-                    byte imagesSaved = 60;
+                    file = new File("src/main/java/com/tk/Reactions/Animations/Pat");
+                    int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved--;
                     com.tk.Reactions.Pat.pated(channel,
                         com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 

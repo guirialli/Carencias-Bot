@@ -1,0 +1,2 @@
+The gifs must be named x.gif, where x is a number between 1 and 124.
+Os gifs devem ser nomedos x.gif, onde x é um número entre 1 e 124.
