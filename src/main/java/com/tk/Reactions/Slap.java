@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 public class Slap extends ReactingServices {
     
     public  static void slaped(MessageChannel channel, String dedicate, int number, String authorName){
-        String path = "src/main/java/com/tk/Animations/Slap/";
+        String path = "Animations/Slap/";
         String afection = "Slaps, Slaps";
 
         com.tk.Reactions.ReactingServices.sendMessage(

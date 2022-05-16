@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 public class Pat extends ReactingServices {
     
     public static void  pated(MessageChannel channel, String dedicate, int number, String authorName){
-        String path = "src/main/java/com/tk/Animations/Pat/";
+        String path = "Animations/Pat/";
         String afection = "Pats";
 
         com.tk.Reactions.ReactingServices.sendMessage(

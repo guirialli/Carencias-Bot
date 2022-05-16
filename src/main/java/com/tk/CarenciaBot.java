@@ -45,7 +45,7 @@ public class CarenciaBot extends ListenerAdapter {
 
 
                 if(action.equals("kiss")){
-                    file = new File("src/main/java/com/tk/Animations/Kiss");
+                    file = new File("Animations/Kiss");
                     int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
                     imagesSaved--;
                     com.tk.Reactions.Kissus.kiss(channel,
@@ -54,7 +54,7 @@ public class CarenciaBot extends ListenerAdapter {
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("hug")){
-                    file = new File("src/main/java/com/tk/Animations/Hug");
+                    file = new File("Animations/Hug");
                     int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
                     imagesSaved--;
                     com.tk.Reactions.Hug.huged(channel,
@@ -63,7 +63,7 @@ public class CarenciaBot extends ListenerAdapter {
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("lick")){
-                    file = new File("src/main/java/com/tk/Animations/Lick");
+                    file = new File("Animations/Lick");
                     int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
                     imagesSaved--;
                     com.tk.Reactions.Lick.licked(channel,
@@ -72,7 +72,7 @@ public class CarenciaBot extends ListenerAdapter {
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if(action.equals("spank")){
-                    file = new File("src/main/java/com/tk/Animations/Spank");
+                    file = new File("Animations/Spank");
                     int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
                     imagesSaved--;                    
                     com.tk.Reactions.Spank.spanked(channel,
@@ -81,7 +81,7 @@ public class CarenciaBot extends ListenerAdapter {
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if (action.equals("slap")){
-                    file = new File("src/main/java/com/tk/Animations/Slap");
+                    file = new File("Animations/Slap");
                     int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
                     imagesSaved--;                    
                     com.tk.Reactions.Slap.slaped(channel,
@@ -90,7 +90,7 @@ public class CarenciaBot extends ListenerAdapter {
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
                 else if (action.equals("pat")){
-                    file = new File("src/main/java/com/tk/Animations/Pat");
+                    file = new File("Animations/Pat");
                     int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
                     imagesSaved--;
                     com.tk.Reactions.Pat.pated(channel,
