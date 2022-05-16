@@ -50,3 +50,14 @@ In the CarenciaBot.java, you will find this:
 - If insert a incorret token, this message will be displayded: "Please, verify the token inserted."
 
 Insert into "Animatons" your gifs. If you want to implement new functions, analyze the source code and deploy.
+
+
+Look this:
+```Java
+...
+ int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved--;
+...
+```
+This decrement in "imagesSaved", should only exist if you keep the "READE-ME.txt" in the folders of "Animations".
+
