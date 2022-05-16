@@ -6,7 +6,8 @@ Look at the source code and implement your new bot, just placing your gifs in th
 If you want to create new categories, just follow the ready-made templates.
 
 if u don't want to have work, just add our bot:
-https://discord.com/oauth2/authorize?client_id=970027694366523443&scope=bot&permissions=19472
+[Carencia Bot ❤️]
+(https://discord.com/oauth2/authorize?client_id=970027694366523443&scope=bot&permissions=19472)
 
 
 ### Help✨
