@@ -14,15 +14,15 @@ Example: "C.kiss @Cute #20".
 
 The master key is "C.", with it the bot understands that the command is for him.
 
-- "C.kiss", he sent kisses in the form of gifs 😘.
+- `C.kiss`, he sent kisses in the form of gifs 😘.
 
-- "C.hug", animated hugs 🤗.
+- `C.hug`, animated hugs 🤗.
 
-- "C.pat", cafune 😻.
+- `C.pat`, cafune 😻.
 
-- "C.slap", slap your friend 😂.
+- `C.slap`, slap your friend 😂.
 
-- "C.spank", spank the butt 😢.
+- `C.spank`, spank the butt 😢.
 
 You can easily tag your friends.
 
