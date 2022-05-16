@@ -45,7 +45,7 @@ In the CarenciaBot.java, you will find this:
 
     }
 ``` 
-- Exchange "Token" for your bot's token.
+- Exchange "Token" for your bot token.
 - In "setActivity" change for status you want.
 - If insert a incorret token, this message will be displayded: "Please, verify the token inserted."
 
