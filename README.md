@@ -5,7 +5,7 @@ This a simple bot code make with jda, this function is send love in your server 
 Look at the source code and implement your new bot, just placing your gifs in the respective folders.
 If you want to create new categories, just follow the ready-made templates.
 
-if u don't want to have work, just add our bot:
+if u don't want to have work, just add our bot on your server:
 [Carencia Bot ❤️](https://discord.com/oauth2/authorize?client_id=970027694366523443&scope=bot&permissions=19472)
 
 
