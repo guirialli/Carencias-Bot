@@ -24,6 +24,8 @@ The master key is "C.", with it the bot understands that the command is for him.
 
 - `C.spank`, spank the butt 😢.
 
+- `C.cry`, cry with a baby 😭.
+
 You can easily tag your friends.
 
 The "#", is optional, only use it if you want to select a specific gif.
