@@ -98,6 +98,15 @@ public class CarenciaBot extends ListenerAdapter {
                         com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
                         imagesSaved), msg.getAuthor().getAsMention());
                 }
+                else if (action.equals("cry")){
+                    file = new File("Animations/Cry");
+                    int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+                    imagesSaved --;
+                    com.tk.Reactions.Cry.cry(channel,
+                        com.tk.Algoritimo.ServicesOnMsg.acariciaoString(msg.getMentionedUsers().toString()),
+                        com.tk.Algoritimo.ServicesOnMsg.cutINT(message, 
+                        imagesSaved), msg.getAuthor().getAsMention());
+                }
             }
         } catch (IllegalArgumentException e) {
             System.out.println("IllegalArgumentException, verify if imageSaved equals quantity than files saved in your respective folder.");} catch( Exception e){
