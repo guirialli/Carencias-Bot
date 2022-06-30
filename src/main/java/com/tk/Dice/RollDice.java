@@ -1,5 +1,9 @@
 package com.tk.Dice;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 import net.dv8tion.jda.api.entities.MessageChannel;
 
 public class RollDice extends com.tk.Discord.DiscordSendMessage {
@@ -12,6 +16,9 @@ public class RollDice extends com.tk.Discord.DiscordSendMessage {
         int roll;
         String commentString, titleString = "**ROLLS:** ";
         String[] splint = msg.split(" ");
+        List<Integer> rollList = new ArrayList<>();
+
+        Comparator<Integer> compDice = (d1,d2) -> d2.compareTo(d1);
 
         if(msg.indexOf("!")!=-1 && msg.indexOf("+")==-1){
             String[] div = splint[1].split("!");
@@ -27,12 +34,13 @@ public class RollDice extends com.tk.Discord.DiscordSendMessage {
                 else if(roll == negative){
                     resultPass --;
                 }
+                rollList.add(roll);
                 somaRoll += roll;
-                if(i+1 < dices)
-                    commentString += roll + ",";
-                else
-                    commentString += roll + "]";
             }
+            rollList.sort(compDice);
+            for(int x : rollList)
+                commentString+=x + ",";
+            commentString += "]";
             commentString += " ----> " + "(" + Integer.toString(somaRoll)  + ")";
             titleString += "**" + resultPass + " hits**";
             com.tk.Discord.DiscordSendMessage.sendMessage(commentString, titleString, channel);
@@ -48,11 +56,12 @@ public class RollDice extends com.tk.Discord.DiscordSendMessage {
                     resultPass++;
                 }
                 somaRoll += roll;
-                if(i+1 < dices)
-                    commentString += roll + ",";
-                else
-                    commentString += roll + "]";
+                rollList.add(roll);
             }
+            rollList.sort(compDice);
+            for(int x : rollList)
+                commentString+=x + ",";
+            commentString += "]";
             commentString += " ----> " + "(" + Integer.toString(somaRoll)  + ")";
             titleString += "**" + resultPass + " hits**";
             com.tk.Discord.DiscordSendMessage.sendMessage(commentString, titleString, channel);
@@ -64,11 +73,13 @@ public class RollDice extends com.tk.Discord.DiscordSendMessage {
             for (int i = 0; i < dices; i++) {
                 roll = com.tk.Algoritimo.AleatoryNum.genNumberInt(rolls);
                 somaRoll += roll;
-                if(i+1 < dices)
-                    commentString += roll + ",";
-                else
-                    commentString += roll + "]";
+                rollList.add(roll);
             }
+
+            rollList.sort(compDice);
+            for(int x : rollList)
+                commentString+=x + ",";
+            commentString += "]";
             commentString += " ----> " + "(" + Integer.toString(somaRoll)  + ")";
             com.tk.Discord.DiscordSendMessage.sendMessage(commentString,titleString, channel);
         }
