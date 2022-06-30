@@ -3,10 +3,13 @@ package com.tk.Algoritimo;
 
 public class ServicesOnMsg {
     
-    public static String shorC(String message){
-        return message.substring(0, 2);
+    public static String shorC(String message, int posFinal){
+        return message.substring(0, posFinal);
     }
 
+    public static String shorC(String message, int posIni, int posFinal){
+        return message.substring(posIni, posFinal);
+    }
 
     public static String cutAction(String message){
         String aux=null;
@@ -26,7 +29,7 @@ public class ServicesOnMsg {
              return " ";
     }
 
-
+   
     public static int cutINT(String message, int bound){
         String[] msgVet= message.split(" ");
         if(msgVet[msgVet.length-1].indexOf("#") == -1  || msgVet[msgVet.length-1].indexOf("[") != -1){
