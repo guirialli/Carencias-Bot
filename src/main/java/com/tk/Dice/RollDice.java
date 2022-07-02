@@ -38,9 +38,13 @@ public class RollDice extends com.tk.Discord.DiscordSendMessage {
                 somaRoll += roll;
             }
             rollList.sort(compDice);
-            for(int x : rollList)
-                commentString+=x + ",";
-            commentString += "]";
+            for(int i =0;i < rollList.size(); i++){
+                commentString+=rollList.get(i);
+                if(i+1 == rollList.size())
+                    commentString+= "]";
+                else
+                    commentString+= ",";
+            }
             commentString += " ----> " + "(" + Integer.toString(somaRoll)  + ")";
             titleString += "**" + resultPass + " hits**";
             com.tk.Discord.DiscordSendMessage.sendMessage(commentString, titleString, channel);
@@ -59,9 +63,13 @@ public class RollDice extends com.tk.Discord.DiscordSendMessage {
                 rollList.add(roll);
             }
             rollList.sort(compDice);
-            for(int x : rollList)
-                commentString+=x + ",";
-            commentString += "]";
+            for(int i =0;i < rollList.size(); i++){
+                commentString+=rollList.get(i);
+                if(i+1 == rollList.size())
+                    commentString+= "]";
+                else
+                    commentString+= ",";
+            }
             commentString += " ----> " + "(" + Integer.toString(somaRoll)  + ")";
             titleString += "**" + resultPass + " hits**";
             com.tk.Discord.DiscordSendMessage.sendMessage(commentString, titleString, channel);
@@ -77,9 +85,13 @@ public class RollDice extends com.tk.Discord.DiscordSendMessage {
             }
 
             rollList.sort(compDice);
-            for(int x : rollList)
-                commentString+=x + ",";
-            commentString += "]";
+            for(int i =0;i < rollList.size(); i++){
+                commentString+=rollList.get(i);
+                if(i+1 == rollList.size())
+                    commentString+= "]";
+                else
+                    commentString+= ",";
+            }
             commentString += " ----> " + "(" + Integer.toString(somaRoll)  + ")";
             com.tk.Discord.DiscordSendMessage.sendMessage(commentString,titleString, channel);
         }
