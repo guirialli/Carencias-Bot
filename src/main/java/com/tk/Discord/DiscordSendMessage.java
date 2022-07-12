@@ -10,7 +10,18 @@ import java.awt.Color;
 
 public abstract class DiscordSendMessage{
 
-    public static void sendMessage(String mountMessageString, File animateFile, MessageChannel channel, String afection) {
+    public static void sendGif(String mountMessageString, String emoji ,File animateFile, MessageChannel channel, String afection) {
+        EmbedBuilder eb = new EmbedBuilder();  
+        eb.setTitle("❤"+afection+"!❤");
+        eb.setColor(new Color(075010130));
+        eb.setDescription(mountMessageString);
+        eb.setImage("attachment://Image.gif");
+        channel.sendFile(animateFile, "Image.gif").setEmbeds(eb.build()).queue(message ->{
+            message.addReaction(emoji).queue();
+        });
+    }
+
+    public static void sendGif(String mountMessageString, File animateFile, MessageChannel channel, String afection) {
         EmbedBuilder eb = new EmbedBuilder();  
         eb.setTitle("❤"+afection+"!❤");
         eb.setColor(new Color(075010130));

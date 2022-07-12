@@ -5,7 +5,7 @@ public class DiscordMountMenssage {
 
         StringBuilder builder = new StringBuilder();
         builder.append(authorName);
-        builder.append(" **" + action +"** ");
+        builder.append(" ** " + action +" ** ");
         if(!dedicate.isEmpty())
             builder.append("<@" + dedicate + "> ");
         builder.append("**#"+number + "**");

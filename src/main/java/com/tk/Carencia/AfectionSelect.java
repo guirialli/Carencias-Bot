@@ -27,11 +27,29 @@ public class AfectionSelect {
        
     }
 
+    public  static void selectorRespond(MessageChannel channel, String message){
+        String[] action = message.split(" ");
+        File file = new File("Animations/" + action[2]);
+
+        if(file.exists()){
+            int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
+            sendAfect(channel, action[2],com.tk.Algoritimo.ServicesOnMsg.cutINT(message, imagesSaved));
+        }
+
+    }
     private static void sendAfect(MessageChannel channel, String dedicate, String authorName,String afection,  int number){
         String path = "Animations/" + afection + "/";
-        com.tk.Discord.DiscordSendMessage.sendMessage(
+        com.tk.Discord.DiscordSendMessage.sendGif(
             com.tk.Discord.DiscordMountMenssage.mountMessage(afection, 
-            dedicate, authorName, number), 
+            dedicate ,authorName, number),"💓" ,
+            com.tk.Discord.DiscordFile.animateFile(number, path), channel, (afection + " " + afection));
+    }
+
+    private static void sendAfect(MessageChannel channel,String afection,  int number){
+        String path = "Animations/" + afection + "/";
+        com.tk.Discord.DiscordSendMessage.sendGif(
+            com.tk.Discord.DiscordMountMenssage.mountMessage(afection, 
+            "" ,"", number),"💓" ,
             com.tk.Discord.DiscordFile.animateFile(number, path), channel, (afection + " " + afection));
     }
 }

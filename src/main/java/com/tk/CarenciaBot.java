@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
@@ -28,22 +29,21 @@ public class CarenciaBot extends ListenerAdapter {
         }
 
     }
-    
-    public void onMessageReceived(MessageReceivedEvent event) {
+
+    @Override
+    public void onMessageReceived(MessageReceivedEvent event){
         Message  msg = event.getMessage();
 
+      
         try {
             String message =msg.getContentRaw().toLowerCase();
-            String action = com.tk.Algoritimo.ServicesOnMsg.shorC(message, 2);
 
-            if(action.equals("c.")){
-                com.tk.Carencia.AfectionSelect.selector(event, message, msg);               
+            if(com.tk.Algoritimo.ServicesOnMsg.shorC(message, 2).equals("c.")){
+                com.tk.Carencia.AfectionSelect.selector(event, message, msg);
+                               
             }
-            else{
-                action = com.tk.Algoritimo.ServicesOnMsg.shorC(message, 1);
-                if(action.equals("?")){
-                    com.tk.Dice.RollDice.roll(message, event.getChannel());
-                }
+            else if(com.tk.Algoritimo.ServicesOnMsg.shorC(message, 1).equals("?")){
+                com.tk.Dice.RollDice.roll(message, event.getChannel());
             }
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
@@ -51,5 +51,13 @@ public class CarenciaBot extends ListenerAdapter {
         }
         
         
+    }
+
+    @Override
+    public void onMessageReactionAdd(MessageReactionAddEvent emoteEvent){
+        System.out.println( "Hello");
+        if(emoteEvent.getReactionEmote().getName().equals("💓") && !emoteEvent.getMember().getId().equals(emoteEvent.getJDA().getSelfUser().getId()))
+            com.tk.Carencia.AfectionSelect.selectorRespond(emoteEvent.getChannel(), emoteEvent.retrieveMessage().toString());
+
     }
 }
