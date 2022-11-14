@@ -51,15 +51,7 @@ In the CarenciaBot.java, you will find this:
 - In "setActivity" change for status you want.
 - If insert a incorret token, this message will be displayded: "Please, verify the token inserted."
 
-Insert into "Animatons" your gifs. If you want to implement new functions, analyze the source code and deploy.
+Insert into "Animations" a subdirectory whose name will be the reaction you want, inside that directory insert your enumerator gifs. 
+Example: Animations/Kiss/1.gif. If you want to implement new functions, analyze the source code and deploy.
 
-
-Look this:
-```Java
-...
- int imagesSaved = (int) Arrays.stream(file.listFiles()).filter(f -> f.isFile()).count();
-                    imagesSaved--;
-...
-```
-This decrement in "imagesSaved", should only exist if you keep the "READE-ME.txt" in the folders of "Animations".
 
